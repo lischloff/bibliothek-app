@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bewertungsapp – Projekte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item
+      *ngFor="let projekt of projekte"
+      [routerLink]="['/projekt-detail', projekt.id]"> <!-- navigates to the details of the projects-->
+
+      <ion-label>
+        <h2>{{ projekt.titel }}</h2>
+        <p>Erscheinungsdatum: {{ projekt.praesentiertAm }}</p>
+        <p>{{ projekt.beschreibung }}</p>
+        <p>Team: {{ teams[projekt.teamId]?.name }}</p>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

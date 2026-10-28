@@ -1,0 +1,37 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Projektdetails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div *ngIf="projekt">
+    <h1>{{ projekt.titel }}</h1>
+
+    <p><strong>Beschreibung:</strong></p>
+    <p>{{ projekt.beschreibung }}</p>
+
+    <p><strong>Präsentiert am:</strong></p>
+    <p>{{ projekt.praesentiertAm }}</p>
+
+    <p><strong>Team-ID:</strong> {{ projekt.teamId }}</p>
+  </div>
+
+    <hr>
+
+  <h2>Bewertungen</h2>
+
+  <div *ngFor="let bewertung of bewertungen">
+    <p><strong>Punkte:</strong> {{ bewertung.score }}</p>
+    <p><strong>Kommentar:</strong> {{ bewertung.comment }}</p>
+    <p><strong>Kriterium-ID:</strong> {{ bewertung.criterionId }}</p>
+    <hr>
+  </div>
+
+  <p *ngIf="bewertungen.length === 0">
+    Für dieses Projekt gibt es noch keine Bewertungen.
+  </p>
+
+</ion-content>

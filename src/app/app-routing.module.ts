@@ -8,8 +8,15 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'projekt-liste',
     pathMatch: 'full'
+  },
+  {
+    path: 'projekt-liste',
+    loadChildren: () => import('./pages/projekt-liste/projekt-liste.module').then( m => m.ProjektListePageModule)
+  },
+  {
+    path: 'projekt-detail/:id', loadChildren: () => import('./pages/projekt-detail/projekt-detail.module').then(m => m.ProjektDetailPageModule)
   },
 ];
 
